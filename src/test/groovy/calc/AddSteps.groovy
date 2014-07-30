@@ -11,6 +11,6 @@ Before() {
 }
 
 When(~"I press add") { ->
-    println "calc = ${calc}"
+//    println "calc = ${calc}"
     result = calc.add()
 }

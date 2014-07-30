@@ -8,6 +8,19 @@ Forked from https://github.com/dkowis/cucumber-jvm-groovy-example in order to cr
  * Cucumber-jvm: as listed in the build.gradle file! (1.1.6 currently)
 
 ### Instructions
+
+The project I forked from used gradle to run cucumber, but either way you run it doesn't work:
+* "gradle cucumber" uses javaexec to call the cucumber Main class with glue options, as well as a classpath hack, but this doesn't seem to be able to find classes within a groovy script, ie CustomWorld, so it fails.
+* "gradle test" runs RunCukesTest, but this fails as described below due to junit XML.
+
+Therefore I added a pom.xml and "mvn clean install" works fine.
+
+This pom.xml also contains a number of other examples and optional code. I move cucumber execution to the verify phase so I can run a sanity check in the test phase.
+
+There are options in RunCukesTest to output a HTML file, and JUnit XML and JSON files in a different location, which are useful in Jenkins.
+
+===
+
 To build the project you can follow standard gradle build stuffs.
 
 I've added a custom cucumber task necessary to run the Cucumber CLI against the groovy scripts and the feature files.

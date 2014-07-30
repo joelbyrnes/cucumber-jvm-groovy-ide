@@ -45,7 +45,7 @@
                         <version>${maven-surefire-plugin.version}</version>
                         <configuration>
                             <includes>
-                                <include>**/PreTestCheck.class</include>
+                                <include>**/SmokeTest.class</include>
                             </includes>
                         </configuration>
                     </plugin>

@@ -3,8 +3,8 @@ apply plugin: 'groovy'
 apply plugin: 'idea'
 
 //build stuff
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
 configurations {
     cucumberRuntime {
@@ -26,7 +26,7 @@ task cucumber() {
 
 dependencies {
     // Groovy library for groovy building!
-    groovy 'org.codehaus.groovy:groovy-all:2.1.6'
+    groovy 'org.codehaus.groovy:groovy-all:2.3.3'
 
     /*
    In order to work around a really flagrant bug ( http://issues.gradle.org/browse/GRADLE-732 )
