@@ -1,34 +1,13 @@
 package calc
 
-import calc.Calculator
+import calc.support.CustomWorld
 
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
-
-class CustomWorld {
-    String customMethod() {
-        "foo"
-    }
-}
-
-World {
-    new CustomWorld()
-}
-
-Before() {
-    assert "foo" == customMethod()
-    calc = new Calculator()
-}
-
-Before("@notused") {
-    throw new RuntimeException("Never happens")
-}
-
-Before("@notused,@important", "@alsonotused") {
-    throw new RuntimeException("Never happens")
-}
+this.metaClass.mixin(CustomWorld)
 
 Given(~"I have entered (\\d+) into (.*) calculator") { int number, String ignore ->
+    println "calc = ${calc}"
     calc.push number
 }
 
@@ -36,10 +15,12 @@ Given(~"(\\d+) into the") {->
     throw new RuntimeException("should never get here since we're running with --guess")
 }
 
-When(~"I press (\\w+)") { String opname ->
-    result = calc."$opname"()
+When(~"I press divide") { ->
+    println "calc = ${calc}"
+    result = calc.divide()
 }
 
 Then(~"the stored result should be (.*)") { double expected ->
+    println "calc = ${calc}"
     assert expected == result
 }

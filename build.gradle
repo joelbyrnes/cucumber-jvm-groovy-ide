@@ -18,7 +18,7 @@ task cucumber() {
         javaexec {
             main = "cucumber.api.cli.Main"
             classpath = configurations.cucumberRuntime
-            args = ['-f', 'pretty', '--glue', 'src/test/groovy', 'src/test/resources']
+            args = ['-f', 'pretty', '--glue', 'src/test/groovy/calc', 'src/test/resources/calc']
 
         }
     }
@@ -39,8 +39,8 @@ dependencies {
     cucumberRuntime files("${jar.archivePath}")
 
     testCompile 'junit:junit:4.11'
-    testCompile 'info.cukes:cucumber-junit:1.1.4'
-    testCompile 'info.cukes:cucumber-groovy:1.1.4'
+    testCompile 'info.cukes:cucumber-junit:1.1.6'
+    testCompile 'info.cukes:cucumber-groovy:1.1.6'
 }
 
 repositories {

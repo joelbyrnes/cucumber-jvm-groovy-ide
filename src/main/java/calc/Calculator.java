@@ -11,6 +11,14 @@ public class Calculator {
     }
 
     public double divide() {
-        return stack.get(0) / stack.get(1);
+		Double result = stack.remove(stack.size() - 2) / stack.get(stack.size() - 1);
+		stack.add(result);
+		return result;
+    }
+
+    public double add() {
+		Double result = stack.remove(stack.size() - 2) + stack.get(stack.size() - 1);
+		stack.add(result);
+		return result;
     }
 }

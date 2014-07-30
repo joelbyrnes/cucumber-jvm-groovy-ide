@@ -1,8 +1,11 @@
-A sample cucumber-jvm groovy project built using gradle!
+This project shows how to create cucumber-jvm groovy projects where the steps files can share state via CustomWorld, so you can keep your step defs tidy, while allowing your IDE to find the correct objects via mixins, for autocompletion.
+It also allows you to run features or Cucumber junit tests directly in IntelliJ from version 13, which is quite nice!
+
+Forked from https://github.com/dkowis/cucumber-jvm-groovy-example in order to create features which cross step files.
 
 ### Versions
  * Gradle: 1.7 
- * Cucumber-jvm: as listed in the build.gradle file!
+ * Cucumber-jvm: as listed in the build.gradle file! (1.1.6 currently)
 
 ### Instructions
 To build the project you can follow standard gradle build stuffs.
