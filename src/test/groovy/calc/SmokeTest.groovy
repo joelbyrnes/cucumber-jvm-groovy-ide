@@ -4,7 +4,7 @@ import org.junit.Test
 
 class SmokeTest {
     @Test
-    def nothing() {
+    void nothing() {
         assert true
     }
 }

@@ -1,6 +1,7 @@
 package calc.support
 
 import calc.Calculator
+import helpers.HelperClass
 
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
@@ -10,6 +11,7 @@ class CustomWorld {
     static getInstance() { return INSTANCE }
 
     static Calculator calc
+    static HelperClass helper
 
     String customMethod() {
         "foo"

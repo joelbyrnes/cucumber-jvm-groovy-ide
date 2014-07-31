@@ -1,7 +1,11 @@
-This project shows how to create cucumber-jvm groovy projects where the steps files can share state via CustomWorld, so you can keep your step defs tidy, while allowing your IDE to find the correct objects via mixins, for autocompletion.
-It also allows you to run features or Cucumber junit tests directly in IntelliJ from version 13, which is quite nice!
+### Cucumber-JVM in Groovy with IDE support and more.
 
-Forked from https://github.com/dkowis/cucumber-jvm-groovy-example in order to create features which cross step files.
+This project shows how to create cucumber-jvm groovy projects which are more friendly in the IDE, specifically JetBrains IntelliJ IDEA!
+* The steps files can share state via CustomWorld, which is nice for keeping your step defs tidy
+* Groovy mixins make the above sharing explicit, used in each step def files, so your IDE can find the correct objects for autocompletion, instead of trusting Cucumber's magic
+* Allows you to run features or Cucumber junit tests directly in IntelliJ from version 13, which is quite nice!
+
+Forked from https://github.com/dkowis/cucumber-jvm-groovy-example in order to demonstrate more advanced setup.
 
 ### Versions
  * Gradle: 1.7 
@@ -17,7 +21,7 @@ Therefore I added a pom.xml and "mvn clean install" works fine.
 
 This pom.xml also contains a number of other examples and optional code. I move cucumber execution to the verify phase so I can run a sanity check in the test phase.
 
-There are options in RunCukesTest to output a HTML file, and JUnit XML and JSON files in a different location, which are useful in Jenkins.
+There are options in RunCukesTest to create a HTML report, and JUnit XML and JSON output, which can be used in Jenkins like any JUnit results.
 
 ===
 
