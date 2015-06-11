@@ -23,10 +23,10 @@ Forked from https://github.com/dkowis/cucumber-jvm-groovy-example in order to de
 
 ### Installation
 
-* Check out source code from github, and because of the proxy you should follow the guide at 503 error while accessing stash.int.corp.sun or github
+* Check out source code from github
 * Build it on command line first - mvn clean install
 * Might as well get it working in gradle too if you have it installed - gradle clean build
-* Then import into IntelliJ (v13) by pom.xml
+* Then import into IntelliJ (v13+) by pom.xml
 
 ### Usage
 
